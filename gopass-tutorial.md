@@ -2,7 +2,10 @@
 
 ## Prerequisites
 - [Gopass](https://github.com/justwatchcom/gopass) (>= 1.5.0)
-`brew install gopass`
+
+```
+brew install gopass
+```
 
 ### Fix GPG pinentry issue
 
