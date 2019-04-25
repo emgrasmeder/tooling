@@ -83,7 +83,7 @@ Again do `gopass init`. This time it should work.
 ## Clone the secrets repository
 
 ```sh
-gopass clone https://github.com/emilyagras/secrets.git falkor
+gopass clone https://github.com/emilyagras/falkorstuff.git falkor
 ```
 
 _Note: If your public key hasn't been added to the repository yet have somebody with access add you to it._
