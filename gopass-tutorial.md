@@ -57,7 +57,7 @@ Please specify how long the key should be valid.
 Key is valid for? (0)
 Is this correct? (y/N) y
 Real name: Your Name
-Email address: someone@thoughtworks.com
+Email address: YOUR_EMAIL@thoughtworks.com
 Comment: -may-leave-it-blank-
 .
 Change (N)ame, (C)omment, (E)mail or (O)kay/(Q)uit? o
@@ -66,17 +66,17 @@ You need a Passphrase to protect your secret key.
 .
 pub   2048R/4081FCC5 2017-08-23
       Key fingerprint = 9321 F258 D941 1DC3 3426  DEDC 85FC 148A 4081 FCC5
-uid       [ultimate] Your Name (-some-comment-) <someone@thoughtworks.com>
+uid       [ultimate] Your Name (-some-comment-) <YOUR_EMAIL@thoughtworks.com>
 sub   2048R/AC156637 2017-08-23
 ```
 
 Congratulations! now you have your own GPG keypair. Follow the followoing steps to get your _public_ key added to gopass database:
 
 ```sh
-$ gpg --armor --export someone@thoughtworks.com > someone-public.key
+$ gpg --armor --export YOUR_EMAIL@thoughtworks.com > my-public-key.key
 ```
 
-Send the `someone-public.key` file to someone already enlisted to add your key.
+Send the `my-public-key.key` file to someone already enlisted to add your key.
 
 Again do `gopass init`. This time it should work.
 
