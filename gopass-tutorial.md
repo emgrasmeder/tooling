@@ -47,7 +47,7 @@ brew install gpg
 and then,
 
 ```sh
-$ gpg --gen-key
+$ gpg --full-generate-key
 Please select what kind of key you want:
    (1) RSA and RSA (default)
 Your selection? 1
