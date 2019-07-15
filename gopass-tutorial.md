@@ -88,6 +88,9 @@ gopass clone https://github.com/emilyagras/falkorstuff.git falkor
 
 _Note: If your public key hasn't been added to the repository yet have somebody with access add you to it._
 
+## Some error involving the word noop
+See this issue, https://github.com/gopasspw/gopass/issues/1091
+
 ## Syncing the password store
 
 You'll need to trust the public keys that are added to the password store. Gopass uses the command `sync` to do all the necessary work for you:
