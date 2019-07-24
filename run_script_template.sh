@@ -5,30 +5,30 @@ some_private_function() {
   echo "hello world"
 }
 
-run_something() {
+__something() {
   # do stuff
   echo "hi"
   some_private_function
   # do other stuff
 }
 
-run_something_else() {
+__something_else() {
   # do stuff
   some_private_function
   # do other stuff
 }
 
-run_failure() {
+__failure() {
   echo "I'm about to fail!"
   echo "This should be the last line of output"
   curl aslkdj
 }
 
 validate_args() {
-  acceptable_args="$(declare -F | sed -n "s/declare -f run_//p" | tr '\n' ' ')"
+  acceptable_args="$(declare -F | sed -n "s/declare -f __//p" | tr '\n' ' ')"
   if [[ ! " $acceptable_args " =~ .*\ $1\ .* ]]; then
       echo "Invalid argument: $1"
-      echo -e "Available commands:\n$(declare -F | sed -n "s/declare -f run_/ - /p")"
+      echo -e "Available commands:\n$(declare -F | sed -n "s/declare -f __/ - /p")"
       exit 1
   fi
 }
