@@ -18,17 +18,17 @@ __something_else() {
   # do other stuff
 }
 
-__failure() {
-  echo "I'm about to fail!"
-  echo "This should be the last line of output"
-  curl aslkdj
-}
-
 validate_args() {
   acceptable_args="$(declare -F | sed -n "s/declare -f __//p" | tr '\n' ' ')"
+
+  if [[ -z $1 ]]; then
+    echo "Must provide an argument" 
+    echo "Available commands:\n$(declare -F | sed -n "s/declare -f __/ - /p")"
+    exit 1
+  fi
   if [[ ! " $acceptable_args " =~ .*\ $1\ .* ]]; then
       echo "Invalid argument: $1"
-      echo -e "Available commands:\n$(declare -F | sed -n "s/declare -f __/ - /p")"
+      echo "Available commands:\n$(declare -F | sed -n "s/declare -f __/ - /p")"
       exit 1
   fi
 }
@@ -36,6 +36,6 @@ validate_args() {
 CMD=${1:-}
 shift || true
 if validate_args ${CMD}; then
-  echo "Argument was valid, but I've got nothing to do!"
+  __${CMD}
   exit 0
 fi
