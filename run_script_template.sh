@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e -o pipefail
+
 some_private_function() {
   # do stuff
   echo "hello world"
