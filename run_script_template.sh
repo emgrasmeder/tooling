@@ -25,12 +25,12 @@ validate_args() {
 
   if [[ -z $1 ]]; then
     echo "Must provide an argument" 
-    echo "Available commands:\n$(declare -F | sed -n "s/declare -f __/ - /p")"
+    printf "Available commands:\n$(declare -F | sed -n "s/declare -f __/ - /p")"
     exit 1
   fi
   if [[ ! " $acceptable_args " =~ .*\ $1\ .* ]]; then
       echo "Invalid argument: $1"
-      echo "Available commands:\n$(declare -F | sed -n "s/declare -f __/ - /p")"
+      printf "Available commands:\n$(declare -F | sed -n "s/declare -f __/ - /p")"
       exit 1
   fi
 }
@@ -38,6 +38,14 @@ validate_args() {
 CMD=${1:-}
 shift || true
 if validate_args ${CMD}; then
-  __${CMD}
+  __${CMD} $@
   exit 0
 fi
+
+
+
+
+
+
+
+
